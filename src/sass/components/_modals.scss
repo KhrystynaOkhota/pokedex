@@ -1,0 +1,188 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  outline: 0;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-overflow-scrolling: touch;
+
+  &-body {
+    position: absolute;
+    display: flex;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: hidden;
+  }
+
+  &-content {
+    position: relative;
+    margin: auto;
+    width: 100%;
+
+    padding: 24px;
+    max-width: 80%;
+    background: $primaryColor;
+
+
+    @media (max-width: $breakpoint-md) {
+      padding: 0 15px;
+      // height: 100%;
+      max-width: 100%;
+      overflow: auto;
+    }
+
+    &__title {
+      display: block;
+      color: $accentColor;
+      @include fontSize(18, 24);
+      line-height: 1.2;
+      margin: 0 0 24px 0;
+      font-weight: bold;
+    }
+
+    &__close {
+      position: absolute;
+      right: 29px;
+      top: 29px;
+      height: 25px;
+      width: 26px;
+
+      & i {
+        content: '';
+        color: $accentColor;
+      }
+
+      @media (max-width: $breakpoint-md) {
+        right: 15px;
+        top: 15px;
+      }
+    }
+
+    & .form__title {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.about-food {
+  & .app__title {
+
+    padding-right: 45px;
+  }
+
+  & .modal-content {
+    @media (max-width: $breakpoint-md) {
+      padding: 24px 15px 14px 15px;
+    }
+    max-height: 100%;
+
+    &__close {
+      @media (max-width: $breakpoint-md) {
+        top: 40px;
+      }
+
+      & i {
+        font-size: 26px;
+        font-weight: bold;
+        color: #000;
+      }
+    }
+
+  }
+}
+
+.book-room {
+  &__slider {
+    @include grid-size(40%);
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+
+  &__form {
+    @include grid-size(60%);
+    padding: 125px 10% 30px 30px;
+    height: 100vh;
+    overflow: auto;
+    @media (min-width: 1920px) {
+      padding-right: 20%;
+      padding-top: 150px;
+    }
+
+    @media (max-width: $breakpoint-lg) {
+      @include grid-size(100%);
+      padding: 125px 15px 15px 15px;
+
+    }
+
+  }
+
+  .modal-content {
+    max-width: 100%;
+    padding: 0;
+
+    &__close {
+      left: 15px;
+      color: #240A00;
+      margin-bottom: 15px;
+      margin-top: 26px;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 28px;
+      width: auto;
+      height: auto;
+      display: none;
+      @media (max-width: $breakpoint-lg) {
+        display: block;
+
+      }
+    }
+  }
+
+  & .column {
+    padding: 0 12px;
+  }
+
+  & .m-row {
+    margin: 0 -12px;
+  }
+
+  .estimated {
+    margin-bottom: 24px;
+
+    &__title {
+      font-size: 30px;
+      @include fontSize(18, 30);
+      line-height: 1.5;
+      margin-right: 15px;
+    }
+
+    &__total {
+      font-family: 'AG', serif;
+      font-size: 36px;
+      line-height: 44px;
+      color: $accentColor;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      &__title, &__total {
+        display: block;
+      }
+    }
+  }
+}
+
+
+
+

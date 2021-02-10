@@ -1,0 +1,135 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  background-color: transparent;
+}
+
+input, button {
+  &:focus {
+    outline: none;
+  }
+}
+
+.form {
+  &__title {
+    color: $accentColor;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  &-control {
+    margin-bottom: 24px;
+    position: relative;
+
+
+    &__notification {
+      font-size: 14px;
+      line-height: 28px;
+      color: #68564F;
+      font-weight: normal;
+    }
+
+    &__label, &__input {
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: 400;
+      color: #68564F;
+      font-family: 'Mont', sans-serif;
+    }
+
+    &__input {
+      width: 100%;
+      background: transparent;
+      border-radius: 0;
+      padding: 16px 21px;
+      outline: none;
+      z-index: 1;
+      position: relative;
+      resize: none;
+      @include transition(0.3);
+      border: 2px solid #68564F;
+    }
+
+
+    &__btn {
+      max-width: 220px;
+      @media (max-width: $breakpoint-md) {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+
+::-webkit-input-placeholder {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #68564F;
+  font-family: 'Mont', sans-serif;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+::-moz-placeholder {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #68564F;
+  font-family: 'Mont', sans-serif;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+:-ms-input-placeholder {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #68564F;
+  font-family: 'Mont', sans-serif;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+:focus::-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+:focus:-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+:focus:-ms-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+div.wpcf7 .ajax-loader {
+  display: none !important;
+}

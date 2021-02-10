@@ -1,0 +1,110 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.text {
+  &-right {
+    text-align: right;
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-left {
+    text-align: left;
+  }
+}
+
+
+.--regular {
+  font-weight: normal;
+}
+
+.--semiBold {
+  font-weight: 600;
+}
+
+.--bold {
+  font-weight: bold;
+}
+
+
+.--italic {
+  font-style: italic;
+}
+
+
+h1, h2, h3, h4, h5 {
+
+  font-weight: 400;
+}
+
+
+.heading-1 {
+  @include fontSize(52, 90);
+  line-height: 1;
+}
+
+.heading-2 {
+
+  font-size: 52px;
+  line-height: 56px;
+  @media (max-width: $breakpoint-md) {
+    line-height: 1;
+  }
+}
+
+.heading-3 {
+  @include fontSize(24, 36);
+  line-height: 1;
+  @media (max-width: $breakpoint-md) {
+    line-height: 1.16;
+  }
+}
+
+.heading-4 {
+  @include fontSize(18, 24);
+  line-height: 1.2;
+}
+
+.heading-5 {
+  @include fontSize(16, 20);
+}
+
+.heading-6 {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.icon-sun:before {
+  content: "\e905";
+}
+
+.icon-zoom:before {
+  content: "\e906";
+
+}
+
+.icon-tick:before {
+  content: "\e907";
+}
+
+.icon-arLeft:before {
+  content: "\e900";
+}
+
+.icon-arRight:before {
+  content: "\e901";
+}
+
+.icon-close:before {
+  content: "\e902";
+}
+
+.icon-facebook:before {
+  content: "\e903";
+}
+
+.icon-instagram:before {
+  content: "\e904";
+}

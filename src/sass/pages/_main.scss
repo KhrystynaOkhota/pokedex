@@ -1,0 +1,132 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.pokemon {
+  &-wrap {
+    padding: 50px 0;
+
+    &__title {
+      @include fontSize(25, 40);
+      padding: 15px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+  }
+
+  &-catalog {
+    &__item {
+      background-color: rgb(245, 245, 245);
+      border-radius: 5px;
+      box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+      padding: 15px;
+      text-align: center;
+      margin-bottom: 30px;
+      overflow: hidden;
+      font-weight: bold;
+      @include transition(.3);
+
+      &--icon {
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        text-align: center;
+        padding: 15px;
+        margin: 0 auto 15px auto;
+
+        & img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+
+      &--name {
+        @include fontSize(16, 18);
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 15px;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  &-card {
+    background-color: rgb(245, 245, 245);
+    border-radius: 5px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    padding: 15px;
+    margin: 10px;
+
+    text-align: center;
+
+    &__icon {
+
+      margin-bottom: 15px;
+
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      text-align: center;
+
+    }
+
+    &__name {
+      @include fontSize(25, 30);
+      text-align: center;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.list-characteristics {
+  &__item {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+
+    &:first-child {
+      font-weight: bold;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &--name {
+      @include grid-size(80%);
+
+
+    }
+
+    &--value {
+      @include grid-size(20%);
+    }
+  }
+}
+
+.list-type {
+
+  &__item {
+    border-radius: 5px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    font-size: 12px;
+    padding: 2px 4px;
+    min-width: 70px;
+    color: white;
+
+    & + & {
+      margin-left: 15px;
+    }
+  }
+}
+
+.btn-more {
+  background: blue;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+}

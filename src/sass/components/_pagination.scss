@@ -1,0 +1,50 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.pagination {
+  margin: 34px 0 69px 0;
+}
+
+.page-numbers {
+  height: 40px;
+  width: 40px;
+  border-radius: 0;
+  border: 1px solid transparent;
+  @include fontSize(14, 18);
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  color: $accentColor;
+  background: transparent;
+  @include transition(.3);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+  @media (max-width: $breakpoint-lg) {
+    height: 34px;
+    width: 34px;
+  }
+
+  &.next, &.prev {
+    & i {
+      color: $accentColor;
+      @include fontSize(14, 16);
+    }
+
+    &:hover {
+      border-color: transparent;
+    }
+  }
+
+  &.current, &:hover {
+    border-color: $accentColor;
+  }
+
+  &.current {
+    transform: scale(1.4);
+  }
+}
